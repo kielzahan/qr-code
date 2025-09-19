@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Thiệp be bé</title>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap" rel="stylesheet">
+        <style>
+                body{
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background-color: #fae1dd;
+
+        }
+
+        .container{
+            position: relative;
+        }
+
+        .birthday{
+            position: relative;
+            top: 50px;
+            cursor: pointer;
+            animation: up 3s linear infinite;
+
+        }
+
+        .envelope{
+            position: relative;
+            width: 500px;
+            height: 400px;
+            background-color: #fab6ab;
+            display: grid;
+            place-items: center;
+
+        }
+
+        .envelope::before{
+            content: "";
+            position: absolute;
+            width: 353px;
+            height: 353px;
+            background: #fab6ab;
+            transform: rotate(45deg);
+            top: -177px;
+            left: 74px;
+            border-radius: 35px 0 0 0;
+        }
+
+        .front{
+            position: absolute;
+            border-right: 350px solid #f4978e;
+            border-top: 400px solid transparent;
+            border-bottom: 0px solid transparent;
+            left: 150px;
+            bottom: 0px;
+            width: 0;
+            height: 0;
+            z-index: 10;
+
+        }
+
+        .front::before{
+            position: absolute;
+            content: '';
+            border-left: 400px solid #fda996;
+            border-top: 400px solid transparent;
+            left:-150px;
+            bottom: 0px;
+        }
+
+        .card{
+            position: relative;
+            width: 450px;
+            height: 350px;
+            background: #ffffff;
+            border-radius: 2px;
+            display: grid;
+            place-items: center;
+            transition: 1s;
+        }
+
+        .card::before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #003049;
+            border-style: dashed;
+        }
+
+        .birthday:hover .card{
+            transform: translateY(-320px);
+        }
+
+        .card .text{
+            font-family: 'Borel', cursive;
+            font-size: 17px;
+            position: absolute;
+            top: 30px;
+            line-height: 25px;
+            color: #003049;
+        }
+
+        .card .noidung{
+            font-family:  "Playwrite IT Moderna", cursive;
+            font-size: 14px;
+            position: absolute;
+            top: 50px;
+            color: #003049;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+        }
+
+        @keyframes up{
+            0%, 100%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-30px);
+            }
+        }
+
+        .birthday::before{
+            content: '';
+            position: absolute;
+            width: 550px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .3);
+            top: 450px;
+            left: -20px;
+            animation: scale 3s linear infinite;
+        }
+
+        @keyframes scale{
+            0%, 100%{
+                transform: scaleX(1);
+            }
+            50%{
+                transform: scaleX(.85);
+            }
+        }
+        </style>
+    </head>
+    <body>
+            <div class="balloons"></div>
+        <div class="container">
+            <div class="birthday">
+                <div class="envelope">
+                    <div class="card">
+                        <div class="text">
+                            Happy Birthday My Babi</div>
+                        <div class="noidung">
+                            Dị là thêm mụt cái sinh nhật tới ùi:0. Chưa dì mò lên được 17 tuổi. Chúc c sinh nhật siu vui vẻ, absolute cinema dới gia đình và t nhen. Chòi nhìn v mà 
+                            t đi với c tận 6 tháng lun. Tuy là trong tgian nì hai đứa có cãi lộn rùi giận nhau nhma t siu siu dui mình ch bao giờ từ bỏ nhau. T bíc trong tương lai t vẫn sẽ
+                            có những lúc khá skibidi và đôi khi hong vừa ý c nhma mong c bỏ qua nhen. Mí lỗi sai nào t sửa là t sửa liền. Còn mí cái nhỏ t hong để ý thì c thông cảm tutu hoi nhen.
+                            Món quà t bíc nó hong thật sự wow như t tưởng tượng nhma t nghĩ nó sẽ là lần đầu tiên c nhận món giống nì:D. Dị nha babi. Năm mới, tuổi mới và một Tuệ Mẫn mới (nhưng hong lạ) heh:Đ</div>    
+                    </div>
+                </div>
+                <div class="front"></div>
+            </div>
+            
+        </div>
+    </body>
+</html>
