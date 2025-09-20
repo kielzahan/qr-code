@@ -87,22 +87,18 @@
             display: grid;
             place-items: center;
             transition: 1s;
-        }
+            animation: slideUp 1.5s ease forwards;
+            animation-delay: 2s; /* wait 2s before sliding */
+            }
 
-        .card::before{
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 2px solid #003049;
-            border-style: dashed;
-        }
+            @keyframes slideUp {
+            to {
+                transform: translateY(-320px);
+            }
+            }
+        
 
-        .birthday.open .card{
-            transform: translateY(-320px);
-        }
+
 
         .card .text{
             font-family: 'Borel', cursive;
@@ -173,16 +169,5 @@
             </div>
             
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-            const birthday = document.querySelector('.birthday');
-            if (!birthday) return;
-
-            birthday.addEventListener('click', (e) => {
-                // toggle open/close on each click
-                birthday.classList.toggle('open');
-            });
-            });
-        </script>
     </body>
 </html>
